@@ -1,0 +1,30 @@
+<div class="container">
+  <div *ngIf="technologies">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <th>#</th>
+        <th>Nom</th>
+        <th>Domaine</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let technologie of technologies">
+          <td>{{ technologie.id }}</td>
+          <td>{{ technologie.nom }}</td>
+          <td>{{ technologie.domaine }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr />
+  <div class="text-center">
+    <button type="button" class="btn btn-success" (click)="fillTechnologiesData()">
+      Alimenter les données <span class="bi bi-plus-circle-fill"></span>
+    </button>
+  </div>
+  <hr />
+  <div class="text-center">
+    <div class="alert alert-primary">
+      <span *ngFor="let line of lines">{{ line }}<br /></span>
+    </div>
+  </div>
+</div>
